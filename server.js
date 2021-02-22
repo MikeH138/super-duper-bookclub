@@ -21,7 +21,7 @@ app.set("view engine", "handlebars");
 // Data
 
 // Routes - import routes and give the server access to them
-const routes = require("./controllers/books_controller");
+const routes = require("./routes/api-routes.js");
 
 app.use(routes);
 

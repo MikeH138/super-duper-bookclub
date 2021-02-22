@@ -11,8 +11,8 @@ for every genre, return five options (first five in genre array)
 const express = require("express");
 const router = express.Router();
 
-// Import the model (book.js) to use its database functions
-const book = require("../models/book");
+// Import the model (bookshelf.js) to use its database functions
+const book = require("../models/bookshelf.js");
 
 // Create all our api routes and set up logic within those routes where required.
 router.get("/", (req, res) => {
