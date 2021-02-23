@@ -16,207 +16,27 @@
     <main class="container flex-wrap">
         <row id="app-title">
             <h1>Book Swap</h1>
-        </row>
+        </row> 
 
-<!--navigation-->
-<div class="row">
-     <h3>Don't know what to look for? Search by genre!</h3>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#!">Fiction</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">Non-Fiction</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">Autobiography</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Mystery</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Science-Fiction</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Fantasy</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Drama</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Romance</a>
-        </li>
-    </ul>
-</div>   
+<button>View Wishlist</button>
 
+   <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+    </nav>
+
+   <button id="wishlishBtn" class="btn btn-primary far fa-star">  View Wishlist</button>
 
     {{{body}}}
     
-    <h3>Don't know what to choose? Check out what's on the shelf!</h3>
-
-<div class="row">
-    <div id="permanent-books" class="col-3">
-
-        <button id="captain" type="button" class="btn btn-block" data-toggle="collapse"
-        data-target="#collapseCaptain"
-        aria-expanded="false"
-        aria-controls="collapseCaptain"></button>
-            <div class="collapse" id="collapseCaptain">
-            <div class="card card-body">
-              <h4>Title: <br>Captain America </h4>
-              <h4>Author:<br> Dav Pilkey</h4>
-              <h4>Genre: <br>Youth</h4>
-              <h4>Link:<a href="https://www.amazon.com/Adventures-Captain-Underpants-Color/dp/0545499089/ref=sr_1_1?crid=3G1YS6UN85MAX&dchild=1&keywords=captain+underpants+book+1&qid=1613691740&sprefix=captain+un%2Caps%2C219&sr=8-1"> Find on Amazon</a></h4>
-            </div>
-            </div>
-
-        <button id="gatsby" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseGatsby"
-          aria-expanded="false"
-          aria-controls="collapseGatsby"></button>
-            <div class="collapse" id="collapseGatsby">
-              <div class="card card-body gatsbyCard">
-                <h4>Title: <br>The Great Gatsby </h4>
-                <h4>Author:<br>F. Scott Fitzgerald</h4>
-                <h4>Genre: <br>Fiction</h4>
-                <h4>Link:<a href="https://www.amazon.com/Great-Gatsby-F-Scott-Fitzgerald/dp/0743273567/ref=sr_1_1?crid=WN7HY4CDRG4P&dchild=1&keywords=the+great+gatsby&qid=1613691288&sprefix=the+great+%2Caps%2C170&sr=8-1"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-        <button id="wind" type="button" class="btn btn-block" data-toggle="collapse"
-        data-target="#collapseWind"
-        aria-expanded="false"
-        aria-controls="collapseWind"></button>
-            <div class="collapse" id="collapseWind">
-            <div class="card card-body">
-              <h4>Title: <br>Gone with the Wind </h4>
-              <h4>Author:<br>Margaret Mitchell</h4>
-              <h4>Genre: <br>Historical-fiction</h4>
-              <h4>Link:<a href="https://www.amazon.com/Gone-Wind-Margaret-Mitchell/dp/068483068X/ref=sr_1_1?dchild=1&keywords=gone+with+the+wind+book&qid=1613691425&sr=8-1"> Find on Amazon</a></h4>
-            </div>
-            </div>
-
-        <button id="vampire" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseVampire"
-          aria-expanded="false"
-          aria-controls="collapseVampire"></button>
-            <div class="collapse" id="collapseVampire">
-              <div class="card card-body">
-                <h4>Title: <br>Interview with a Vampire </h4>
-                <h4>Author:<br>Anne Rice</h4>
-                <h4>Genre: <br>Horror</h4>
-                <h4>Link:<a href="https://www.amazon.com/Interview-Vampire-Anne-Rice/dp/0345337662/ref=sr_1_1?crid=1EBKKL2N9GGTC&dchild=1&keywords=interview+with+the+vampire&qid=1613691464&sprefix=interview+%2Caps%2C182&sr=8-1"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-        <button id="orwell" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseOrwell"
-          aria-expanded="false"
-          aria-controls="collapseOrwell"></button>
-            <div class="collapse" id="collapseOrwell">
-              <div class="card card-body">
-                <h4>Title: <br>1984</h4>
-                <h4>Author:<br>George Orwell</h4>
-                <h4>Genre: <br>Science-Fiction</h4>
-                <h4>Link:<a href="https://www.amazon.com/1984-Signet-Classics-George-Orwell/dp/0451524934/ref=sr_1_1?crid=2NEMVZQ0ZN74Y&dchild=1&keywords=1984+george+orwell+paperback&qid=1613691345&sprefix=1984+george+orwell+%2Caps%2C176&sr=8-1"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-        <button id="henry" type="button" class="btn btn-block" data-toggle="collapse"
-            data-target="#collapseHenry"
-            aria-expanded="false"
-            aria-controls="collapseHenry"></button>
-            <div class="collapse" id="collapseHenry">
-                <div class="card card-body">
-                  <h4>Title: <br>Henry V</h4>
-                  <h4>Author:<br>William Shakespeare</h4>
-                  <h4>Genre: <br>Drama</h4>
-                  <h4>Link:<a href="https://www.amazon.com/Henry-V-Folger-Shakespeare-Library/dp/1982109416/ref=sr_1_2?dchild=1&keywords=henry+the+5th+shakespeare&qid=1613691532&sr=8-2"> Find on Amazon</a></h4>
-                </div>
-            </div>
-
-        <button id="ring" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseRing"
-          aria-expanded="false"
-          aria-controls="collapseRing"></button>
-            <div class="collapse" id="collapseRing">
-              <div class="card card-body">
-                <h4>Title: <br>Lord of the Rings </h4>
-                <h4>Author:<br>J. R. R. Tolkien</h4>
-                <h4>Genre: <br>Fantasy</h4>
-                <h4>Link:<a href="https://www.amazon.com/Lord-Rings-50th-Anniversary-Vol/dp/0618640150/ref=sr_1_2?dchild=1&keywords=lotr+books&qid=1613691569&sr=8-2"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-       <button id="murder" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseMurder"
-          aria-expanded="false"
-          aria-controls="collapseMurder"></button>
-            <div class="collapse" id="collapseMurder">
-              <div class="card card-body">
-                <h4>Title: <br>Murder on the Orient Express</h4>
-                <h4>Author:<br>Agatha Christie</h4>
-                <h4>Genre: <br>Mystery</h4>
-                <h4>Link:<a href="https://www.amazon.com/Murder-Orient-Express-Hercule-Mysteries/dp/0062073494/ref=sr_1_2?crid=2AML1RBAZPTS1&dchild=1&keywords=murder+on+the+orient+express+book&qid=1613691600&sprefix=murder+on+the+orient%2Caps%2C178&sr=8-2"> Find on Amazon</a></h4>
-              </div>
-            </div>
-            
-        <button id="gun" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseGun"
-          aria-expanded="false"
-          aria-controls="collapseGun"></button>
-            <div class="collapse" id="collapseGun">
-              <div class="card card-body">
-                <h4>Title: <br>Top Gun </h4>
-                <h4>Author:<br>Dan Pederson</h4>
-                <h4>Genre: <br>Autobiography</h4>
-                <h4>Link:<a href="https://www.amazon.com/Topgun-American-Story-Dan-Pedersen/dp/0316416266/ref=sr_1_1?dchild=1&keywords=top+gun+book&qid=1613691721&sr=8-1"> Find on Amazon</a></h4>
-              </div>
-            </div>
-       
-        <button id="sap" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseSap"
-          aria-expanded="false"
-          aria-controls="collapseSap"></button>
-            <div class="collapse" id="collapseSap">
-              <div class="card card-body">
-                <h4>Title: <br>Sapiens </h4>
-                <h4>Author:<br>Uyval Noah Harari</h4>
-                <h4>Genre: <br>Non-Fiction</h4>
-                <h4>Link:<a href="https://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari/dp/0062316117/ref=sr_1_1?dchild=1&keywords=sapiens&qid=1613691661&sr=8-1"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-        <button id="notebook" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseNote"
-          aria-expanded="false"
-          aria-controls="collapseNote"></button>
-            <div class="collapse" id="collapseNote">
-              <div class="card card-body">
-                <h4>Title: <br>The Notebook </h4>
-                <h4>Author:<br>Nicholas Sparks</h4>
-                <h4>Genre: <br>Romance</h4>
-                <h4>Link:<a href="https://www.amazon.com/Note-Book-Nicholas-Sparks/dp/B000W0R4JS/ref=sr_1_2?dchild=1&keywords=the+notebook+book&qid=1613691696&sr=8-2"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-            <button id="wilderness" type="button" class="btn btn-block" data-toggle="collapse"
-          data-target="#collapseWilderness"
-          aria-expanded="false"
-          aria-controls="collapseWilderness"></button>
-            <div class="collapse" id="collapseWilderness">
-              <div class="card card-body">
-                <h4>Title: <br>Braving the Wilderness</h4>
-                <h4>Author:<br>Brene Brown</h4>
-                <h4>Genre: <br>Self-Help</h4>
-                <h4>Link:<a href="https://www.amazon.com/Braving-Wilderness-Quest-Belonging-Courage/dp/0812985818/ref=sr_1_4?dchild=1&keywords=brene+brown&qid=1613692257&sr=8-4"> Find on Amazon</a></h4>
-              </div>
-            </div>
-
-    </div>
-</div>
-    
-</div>
 
 </main>
 
@@ -227,6 +47,8 @@
 
        <!--jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/public/assets/js..."></script>
+    <script src="/public/assets/js/wishlist.js"></script>
+    <script src="/public/assets/js/save-book.js"></script>
+    <script src="/public/assets/js/home-search.js"></script>
 </body>
 </html>

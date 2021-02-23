@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const Bookshelf = sequelize.define('Bookshelf', {
+  const Book = sequelize.define('Bookshelf', {
     bookID: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -24,11 +24,11 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-Bookshelf.associate = (models) => {
+Book.associate = (models) => {
   // Associating the "bookshelf" with Users
   // Each user of the website will be able to use a search bar, to find a book that is found in the bookshelf table
-  Bookshelf.hasMany(models.User);
+  Book.hasMany(models.User);
 };
 
-  return Bookshelf;
+  return Book;
 };

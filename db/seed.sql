@@ -11,5 +11,5 @@ VALUES  ("The Great Gatsby", "F.Scott Fitzgerald", "fiction"),
         ("Murder on the Orient Express", "Agatha Christie", "mystery"),
         ("Top Gun", "Dan Pederson", "autobiography"),
         ("Sapiens", "Uyval Noah Harari", "non-fiction"),
-        ("The Notebook", "Nicholas Sparks", "romance")
+        ("The Notebook", "Nicholas Sparks", "romance"),
         ("Braving the Wilderness", "Brene Brown", "self-help");

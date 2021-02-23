@@ -1,0 +1,29 @@
+<!--retrieved from Google API-->
+
+
+<h3 class="mb-1">Your recommendations.</h3>
+    <div class="container flex-wrap">
+    <div class="list-group flex-wrap">
+
+      {{#each book}}
+      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class="d-flex w-100 justify-content-between">
+          <h5>{{book.title}} <br>By {{book.author}}</h5> <small class="text-muted">{{book.subject}}</small><i class="far fa-star btn"></i><i class="far fa-trash-alt btn"></i>
+        </div>
+        <p class="mb-1">{{book.summary}}</p>
+        <small id="latin-omit">Donec id elit non mi porta.</small>
+        <img id="rec1-img" alt="rec1-img" class="img flex-wrap" src="{{book.cover/thumbnail}}">
+      </a>
+    {{/each}}
+    
+    </div>
+    </div>
+
+{{!-- 
+<ul>
+  {{#each book}}
+    <li>{{book.title}}</li>
+    <li>{{book.author}}</li>
+    <li>{{book.genre}}</li>
+    {{/each}}
+</ul> --}}

@@ -1,0 +1,18 @@
+<!--import saved books from either google api or our database-->
+
+<h1>Wishlist</h1>
+{{#each savedBooks}}
+<ul class="list-group">
+  <li class="list-group-item">{{title, author, genre, cover}}</li>
+</ul>
+{{/each}}
+
+
+{{!-- <ul>
+    <li>{{title, author, genre, cover}}</li>
+</ul> --}}
+
+{{> permanentBooks if saved}} <!--accessing permanentBooks partial handlebars-->
+{{> recommendedBooks if saved}} <!--accessing recommendedBooks partial handlebars-->
+
+
