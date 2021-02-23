@@ -24,8 +24,12 @@ app.set("view engine", "handlebars");
 const routes = require("./routes/my-api-routes");
 const routes2 = require("./routes/html-routes");
 
-app.use(routes);
-app.use(routes2);
+// Routes
+require("./routes/my-api-routes")(app);
+require("./routes/html-routes")(app);
+
+// app.use(routes);
+// app.use(routes2);
 
 // Listener
 app.listen(PORT, () => {

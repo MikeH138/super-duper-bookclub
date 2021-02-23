@@ -1,5 +1,7 @@
 # Super Duper Bookclub
 
+![Book Swap](public/assets/imgs/book-swap-main.png)
+
 ## Description
 
 This is the second project (fifthteenth assigment) from the UConn Coding Boot Camp curriculum.
@@ -24,15 +26,25 @@ View the deployed app [here](heroku link)
 
 ## Goals
 
-1. Inspect starter code within the `Develop` folder.
+1. Must use a Node and Express server
 
-2. Get an understanding of each file's responsibility.
+2. Must use Handlebars.js as the template engine
 
-3. Create a GoogleDoc
+3. Must be backed by a MySQL database with a Sequelize ORM
 
-4. Write a tutorial explaining _every_ file and its purpose [in GoogleDoc] .
+4. Must utilize both GET and POST routes for retrieving and adding new data
 
-5. Add instructions for how you could add changes to it [at end of tutorial in GoogleDoc].
+5. Must be deployed using Heroku (with data)
+
+6. Must utilize at least one new library, package, or technology that we haven’t discussed
+
+7. Must have a polished front end/UI
+
+8. Must have a folder structure that meets the MVC paradigm
+
+9. Must meet good quality coding standards (indentation, scoping, naming)
+
+10. Must protect API keys in Node with environment variables
 
 ## Technologies Used
 
@@ -55,32 +67,46 @@ You and your team will design and build an app using the MVC paradigm and your o
 .Develop
 |
 ├── config
-│   └── middleware
-|    |  ├── isAuthenticated.js
-|    ├── config.json
-|    └── passport.js
+│   ├── config.json
+|   ├── connection.js
+|   └── orm.js
 │
 ├── models
-│   └── index.js
-|   └── user.js
+│   └── book.js
+|   └── index.js
 │
 ├── public
-│   └── js
-|   |   ├────login.js
-|   |   ├──── members.js
-|   |   └──── signup.js
-|   └── stylesheets
-│       └── style.css
-│
+|    ├── assets
+|        └── css
+│             └── style.css
+|        └── imgs
+│             └── book-covers
+│        └── js
+|           ├──── home-search.js
+|           ├──── newScript.js
+|           ├──── save-book.js
+|           ├──── script.js
+|           └──── wishlist.js
+|
 ├── routes
-|    ├── api-routes.js
+|    ├── my-api-routes.js
 |    └── html-routes.js
 │
-├── (node_modules)
-├── (.gitignore)
-├── (package-lock.json)
+├── views
+|     └── layout
+|           └── main.handlebars
+|     └── partials
+|           └── recommendations.handlebars
+|     ├──── index.handlebars
+|     └──── wishlist.handlebars
+|
+├── node_modules
+├── .gitignore
+├── (.eslintignore)
+├── .eslintrc.json
 |
 ├── package.json
+├── (package-lock.json)
 |
 ├── server.js
 │
@@ -91,7 +117,7 @@ You and your team will design and build an app using the MVC paradigm and your o
 
 ### Workbench Table
 
-![workbench-table](public/assets/imgs/used-imgs/bookshelf-tables-demo.png)
+![workbench-table](public/assets/imgs/bookshelf-tables-demo.png)
 
 ### Wireframe
 
@@ -100,9 +126,9 @@ You and your team will design and build an app using the MVC paradigm and your o
 ### User Story
 
 ```
-AS A book buyer
-I WANT an application that finds books based on a selected genre
-SO THAT I can narrow my book search and get back to reading.
+AS A reader who is always looking for new book suggestions
+I WANT an application that finds me book recommendations based on my search input
+SO THAT I can save books that interest me AND refer to them when it's time for a new book
 
 ```
 
@@ -114,28 +140,27 @@ The application must meet the following requirements:
 GIVEN a book finding application that finds books based on user's selection
 WHEN a user clicks on the link
 THEN the application will open in Heroku
-WHEN a user selects a genre
-THEN the top three books of the selected genre are displayed
-
+WHEN a user inputs a search criteria and clicks the search button
+THEN the top three books related to the search input are displayed
 WHEN a user clicks the save button
-THEN the user will be directed to a sign up page in order to save their books
-
+THEN the book will be saved to a Wishlist books
+WHEN a user clicks the View Wishlist button
+THEN the user will be directed to a page that displays all their saved books
 WHEN a user clicks the remove button
 THEN the book will be removed from the page
-
-
-
 WHEN the user clicks on one of the books on the shelf
-THEN the user will be taken to a description of the book along with a site where they can purchase the book
+THEN a dropdown description of the book along with a site where they can purchase the book will display
+
 WHEN the user examines the documentation of the application
 THEN the user will see a folder structure that meets the MVC paradigm
 WHEN the user examines the code of the application
 THEN the user will see code that meets good quality coding standards
 
-
 ```
 
 ### Presentation Requirements
+
+![Book-Swap Pres](public/assets/imgs/bookswap-pres.png)
 
 - Elevator pitch: a one minute description of your application
 
@@ -151,73 +176,33 @@ THEN the user will see code that meets good quality coding standards
 
 ## Installation
 
-1. Create a .gitignore file:
+1. Create a new directory where you want to save the repo.
 
-   - type `node_modules` in first line
-   - type `.DS_Store` in second line
+2. Clone this repo using the ssh-key for the code.
 
-2. Create a new **package.json** file:
+3. Clone this repo: `git clone ssh-key-of-Repo` into your project directory.
 
-   - Initialize `npm`: `npm init`. This will be used to set up a new or existing npm package. You can customize the fields, or you can continue to press the enter key until you see `0 vulnerabilities`.
-   - This will create a `package.json` file and a `package-lock.json` file.
-   - Install the Inquirer package using: `npm install inquirer`
-   - This will create a `node_modules` file.
-   - You are now ready to create your `index.js` file: `touch server.js`
+4. Open code in VS Code or another text-editor.
 
-3. Install Express, Express-Handlebars, MySQL, and Sequelize
+5. In an integrated terminal, run the code `node server.js`.
 
-4. Edit mysql connection with your local host, root, password, and port
-
-5. create `.eslintignore` file and add node_modules to it
-6. Install ESLint
-
-- edit `.eslintrc.json` file
-
-<!--1.
-
-
-5. Set up Inquirer package within your newly created `server.js` file.
-
-```
-const inquirer = require('inquirer');
-const fs = require("fs");
-const util = require("util");
-```
-
-7. Copy and paste the code (or fork it) from the `server.js` within this repository.
-
-8. Save file. Run `server.js` file within terminal using `node server.js`
-
-9. If working, answer the prompts by entering your own inputs via the command line.
-   -->
+6. You can also run the app from Heroku.
 
 ### Definitions
 
 The goals above and the tutorial can be further understood with the following definitions:
 
-**MySQL**
+**Sequelize**
 : the most popular Structured Query Language (SQL) database with a relational structure.
-
-**relational database**
-: a collection of data stored electronically that stores and finds data based on its relationship to other data in the database. Relational databases are tabular, meaning that data is stored in tables composed of rows and columns, much like a spreadsheet.
-
-**CRUD**
-: functions that Create Render Update Delete
-
-**Primary Keys**
-: aka primary keyword, a key in a relational database that is unique for each record; a unique identifier, such as a telephone number; a relational database must always have one and only one primary key.
-
-**Foreign Keys**
-: a column or group of columns in a relational database table that provides a link between data in two tables; acts as a cross-reference between tables because it references the primary key of another table, thereby establishing a link between them.
-
-**Joins**
-: command that joins two or more tables and the specified data and combines the data
 
 ## Usage
 
-![view](.png)
+Display of the bookshelf:
+![bookshelf-demo-gif](public/assets/imgs/Book-Swap.gif)
 
-![view](.png)
+Recommendations based on the user's input will be displayed in the following way:
+
+![recs page demo](public/assets/imgs/bookswap-recs-demo.png)
 
 ## Credits
 
@@ -229,6 +214,8 @@ Reference articles:
 [FrameBox - wireframe renderer](http://framebox.org/ANIRG)
 
 [ClickMinded - button generator](https://www.clickminded.com/button-generator/)
+
+[Sequelize - Documentation](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-method-define)
 
 ## Contributors
 

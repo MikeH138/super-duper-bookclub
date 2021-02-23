@@ -13,7 +13,7 @@ fetch("/api/wishlist", {
   .then((data) => {
     console.log("Success in getting all books:", data);
     data.forEach(({ title, author, genre, summary, cover }, i) => {
-      const wellContainer = document.getElementById("well-section");
+      const wellContainer = document.getElementById("well-section"); //recBox
       const sectionBreak = document.createElement("hr");
 
       const wellSection = document.createElement("div");

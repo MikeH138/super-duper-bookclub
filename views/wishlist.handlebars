@@ -1,18 +1,50 @@
 <!--import saved books from either google api or our database-->
 
-<h1>Wishlist</h1>
-{{#each savedBooks}}
-<ul class="list-group">
-  <li class="list-group-item">{{title, author, genre, cover}}</li>
-</ul>
-{{/each}}
+<h3 class="mb-1">Your Wishlist</h3>
+  <div id="wishBox" class="container flex-wrap">
+  <div id="wishList" class="list-group flex-wrap">
 
+    {{#each savedBooks}}
+    <a id="wishBook-{{this.id}}" 
+        href="#!" 
+        class="list-group-item list-group-item-action flex-column align-items-start active">
 
-{{!-- <ul>
-    <li>{{title, author, genre, cover}}</li>
-</ul> --}}
+      <div id="wishHeading-{{this.id}}" 
+        class="d-flex w-100 justify-content-between">
 
-{{> permanentBooks if saved}} <!--accessing permanentBooks partial handlebars-->
-{{> recommendedBooks if saved}} <!--accessing recommendedBooks partial handlebars-->
+          <h5 id="title-{{this.id}}">
+            {{resp2.items[i].volumeInfo.title}}</h5>
 
+          <h5 id="authors-{{this.id}}">
+            By {{resp2.items[i].volumeInfo.authors}}</h5> 
+          
+          <small id="genre-{{this.id}}" class="text-muted">
+            {{resp2.items[i].volumeInfo.subject}}</small>
+
+            <i id="trashBookBtn" class="far fa-trash-alt btn"></i>
+      </div>
+
+      <div id="wishListBody-{{this.id}}">
+
+        <p id="description-{{this.id}}" 
+          class="mb-1" 
+          placeholder="Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.">
+          {{resp2.items[i].volumeInfo.description}}</p>
+
+          <small id="latin-omit">Donec id elit non mi porta.</small>
+          <img id="wishCover-{{this.id}}" 
+            alt="wishCover-{{this.id}}" 
+            class="img flex-wrap" 
+            src="{{resp2.items[i].volumeInfo.imageLinks.thumbnail}}">
+      </div>
+
+    </a>
+    {{/each}}
+    
+  </div>
+  </div>
+
+{{!-- 
+{{> index /if savedBtn:true }} <!--accessing permanentBooks partial handlebars-->
+{{> recommendations if saved}} <!--accessing recommendedBooks partial handlebars--> --}}
 

@@ -2,28 +2,47 @@
 
 
 <h3 class="mb-1">Your recommendations.</h3>
-    <div class="container flex-wrap">
-    <div class="list-group flex-wrap">
+  <div id="recBox" class="container flex-wrap">
+  <div id="recList" class="list-group flex-wrap">
 
-      {{#each book}}
-      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5>{{book.title}} <br>By {{book.author}}</h5> <small class="text-muted">{{book.subject}}</small><i class="far fa-star btn"></i><i class="far fa-trash-alt btn"></i>
-        </div>
-        <p class="mb-1">{{book.summary}}</p>
-        <small id="latin-omit">Donec id elit non mi porta.</small>
-        <img id="rec1-img" alt="rec1-img" class="img flex-wrap" src="{{book.cover/thumbnail}}">
-      </a>
+    {{#each book}}
+    <a id="recBook-{{i}}" 
+        href="#!" 
+        class="list-group-item list-group-item-action flex-column align-items-start active">
+
+      <div id="recBookHeading-{{i}}" 
+        class="d-flex w-100 justify-content-between">
+
+          <h5 id="title-{{i}}">Title:
+            {{resp2.items[i].volumeInfo.title}}</h5>
+<!--check if rename to {{title}} only-->
+
+          <h5 id="authors-{{i}}">
+            By {{resp2.items[i].volumeInfo.authors}}</h5> 
+          
+          <small id="genre-{{i}}" class="text-muted">
+            {{resp2.items[i].volumeInfo.subject}}</small>
+
+            <i id="saveBookBtn" class="far fa-star btn" book-id="{{this.id}}" book-saved="{{saved}}"></i>
+            <i id="trashBookBtn" class="far fa-trash-alt btn" data-id="{{this.id}}"></i>
+      </div>
+
+      <div id="recBookBody-{{i}}">
+
+        <p id="description-{{i}}" 
+          class="mb-1" 
+          placeholder="Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.">
+          {{resp2.items[i].volumeInfo.description}}</p>
+
+          <small id="latin-omit">Donec id elit non mi porta.</small>
+          <img id="recCover-{{i}}" 
+            alt="recCover-{{i}}" 
+            class="img flex-wrap" 
+            src="{{resp2.items[i].volumeInfo.imageLinks.thumbnail}}">
+      </div>
+
+    </a>
     {{/each}}
     
-    </div>
-    </div>
-
-{{!-- 
-<ul>
-  {{#each book}}
-    <li>{{book.title}}</li>
-    <li>{{book.author}}</li>
-    <li>{{book.genre}}</li>
-    {{/each}}
-</ul> --}}
+  </div>
+  </div>

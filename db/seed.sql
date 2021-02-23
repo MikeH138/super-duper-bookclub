@@ -1,6 +1,6 @@
 USE bookshelf_db;
 
-INSERT INTO bookshelf (title, author, genre) 
+INSERT INTO bookshelves (title, author, genre) 
 VALUES  ("The Great Gatsby", "F.Scott Fitzgerald", "fiction"),
         ("Captain Underpants", "Dav Pilky", "youth"),
         ("Gone With The Wind", "Margaret Mitchell", "historical-fiction"),

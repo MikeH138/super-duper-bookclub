@@ -48,7 +48,7 @@ document.addEventListener("DOMContenLoaded", event) => {
 
 
 // SEARCH Books
-const searchBooksBtn = document.getElementById("")
+const searchBooksBtn = document.getElementById("#searchBtn");
 
 // SAVE Books
 const saveBookBtn = document.querySelectorAll("#saveBookBtn");

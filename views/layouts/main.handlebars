@@ -13,33 +13,31 @@
 </head>
 <body>
 
-    <main class="container flex-wrap">
-        <row id="app-title">
-            <h1>Book Swap</h1>
-        </row> 
-
-<button>View Wishlist</button>
+  <main class="container flex-wrap">
+    <row id="app-title">
+      <h1>Book Swap</h1>
+    </row> 
 
    <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-          <input
+      <form id="searchForm" class="form-inline">
+          <input 
+            id="searchInput"
             class="form-control mr-sm-2"
             type="text"
-            placeholder="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            placeholder="Search"/>
+
+          <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search
           </button>
-        </form>
+        
+          <button id="wishlishBtn" class="btn btn-primary" onclick=""><i class="far fa-star"></i> View Wishlist
+          </button>
+      </form>
     </nav>
-
-   <button id="wishlishBtn" class="btn btn-primary far fa-star">  View Wishlist</button>
 
     {{{body}}}
     
-
-</main>
-
+  </main>
 
    <!--collapse button for permanent books--> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

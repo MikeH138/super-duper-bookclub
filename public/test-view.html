@@ -1,94 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Book Swap</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-    
-    <link href="/public/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-<body>
-<main class="container flex-wrap">
-        <row id="app-title">
-            <h1>Book Swap</h1>
-        </row>
-    
-<div class="row">
-     <h3>Don't know what to look for? Search by genre!</h3>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#!">Fiction</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">Non-Fiction</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">Autobiography</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Mystery</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Science-Fiction</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Fantasy</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Drama</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#!">Romance</a>
-        </li>
-    </ul>
-</div>   
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
 
-<div class="row">
-</div>
-   
-    <h3 class="mb-1">Your recommendations.</h3>
-    <div class="container flex-wrap">
-    <div class="list-group flex-wrap">
-      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-      
-          <h5>{{title}} <br>By {{author}}</h5> <small class="text-muted">3 days ago</small><i class="far fa-star btn"></i><i class="far fa-trash-alt btn"></i>
+    <link href="/public/assets/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="container flex-wrap">
+      <row id="app-title">
+        <h1>Book Swap</h1>
+      </row>
+
+      <nav class="navbar navbar-light bg-light">
+        <form id="searchForm" class="form-inline">
+          <input class="form-control" type="text" placeholder="Search" />
+          <button id="searchBtn" class="btn btn-outline-success" type="submit">
+            <i class="fas fa-search"></i>
+            Search
+          </button>
+
+          <button id="wishlistBtn" class="btn btn-primary" onclick="">
+            <i class="far fa-star"></i>
+            View Wishlist
+          </button>
+        </form>
+      </nav>
+      <!-- 
+      <h3 class="mb-1">Your recommendations.</h3>
+      <div id="recBox" class="container flex-wrap">
+        <div class="list-group flex-wrap">
+          <a
+            href="#!"
+            class="list-group-item list-group-item-action flex-column align-items-start active"
+          >
+            <div id="recBook1" class="d-flex w-100 justify-content-between">
+              <h5 id="title-1">{{title}}</h5>
+              <h5 id="author-1">By {{author}}</h5>
+
+              <small id="genre-1" class="text-muted">{{genre}}</small
+              ><i id="saveBookBtn" class="far fa-star btn"></i
+              ><i id="trashBookBtn" class="far fa-trash-alt btn"></i>
+            </div>
+            <p id="summary-1" class="mb-1">
+              Donec id elit non mi porta gravida at eget metus. Maecenas sed
+              diam eget risus varius blandit. Lorem, ipsum dolor sit amet
+              consectetur adipisicing elit. Totam itaque nostrum facilis
+              suscipit doloremque maiores aut natus velit quo expedita, in
+              tempore perferendis et. Aliquid harum porro dignissimos numquam
+              dolores?
+            </p>
+            <small id="latin-omit">Donec id elit non mi porta.</small>
+            <img
+              id="rec1-img"
+              alt="rec1-img"
+              class="img flex-wrap"
+              src="https://via.placeholder.com/150x100"
+            />
+          </a> 
+
+          <a
+            href="#!"
+            class="list-group-item list-group-item-action flex-column align-items-start"
+          >
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{title}} <br />By {{author}}</h5>
+              <small id="genre-2" class="text-muted">{{genre}}</small
+              ><i id="saveBookBtn" class="far fa-star btn"></i
+              ><i id="trashBookBtn" class="far fa-trash-alt btn"></i>
+            </div>
+            <div>
+              <p id="summary-2" class="mb-1">
+                Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                diam eget risus varius blandit.
+              </p>
+              <small class="text-hide">Donec id elit non mi porta.</small>
+              <img
+                id="rec2-img"
+                alt="rec2-img"
+                class="img flex-wrap"
+                src="https://via.placeholder.com/150x100"
+              />
+            </div>
+          </a>
+
+          <a
+            href="#!"
+            class="list-group-item list-group-item-action flex-column align-items-start"
+          >
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{title}} <br />By {{author}}</h5>
+              <small id="genre-3" class="text-muted">{{genre}}</small
+              ><i id="saveBookBtn" class="far fa-star btn"></i
+              ><i id="trashBookBtn" class="far fa-trash-alt btn"></i>
+            </div>
+            <p id="summary-3" class="mb-1">
+              Donec id elit non mi porta gravida at eget metus. Maecenas sed
+              diam eget risus varius blandit.
+            </p>
+            <small class="text-muted" id="latin-omit"
+              >Donec id elit non mi porta.</small
+            >
+            <img
+              id="rec3-img"
+              alt="rec3-img"
+              class="img flex-wrap"
+              src="https://via.placeholder.com/150x100"
+            />
+          </a>
         </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam itaque nostrum facilis suscipit doloremque maiores aut natus velit quo expedita, in tempore perferendis et. Aliquid harum porro dignissimos numquam dolores?</p>
-        <small id="latin-omit">Donec id elit non mi porta.</small>
-        <img id="rec1-img" alt="rec1-img" class="img flex-wrap" src="https://via.placeholder.com/150x100">
-      </a>
-
-      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{title}} <br>By {{author}}</h5>
-          <small class="text-muted">3 days ago</small><i class="far fa-star btn"></i><i class="far fa-trash-alt btn"></i>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-hide">Donec id elit non mi porta.</small>
-        <img id="rec2-img" alt="rec2-img" class="img flex-wrap" src="https://via.placeholder.com/150x100">
-      </a>
-      
-      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{title}} <br>By {{author}}</h5>
-          <small class="text-muted" >3 days ago</small><i class="far fa-star btn"></i><i class="far fa-trash-alt btn"></i>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted" id="latin-omit">Donec id elit non mi porta.</small>
-        <img id="rec3-img" alt="rec3-img" class="img flex-wrap" src="https://via.placeholder.com/150x100">
-      </a>
-    </div>
-</div>
-
-<h3>Don't know what to choose? Check out what's on the shelf!</h3>
-
+      </div>
+-->
+      <h3>Don't know what to choose? Check out what's on the shelf!</h3>
 <div class="row">
-    <div id="permanent-books" class="col-3">
+    <div id="permanent-books" class="col-3 align-itmes-center">
 
         <button id="captain" type="button" class="btn btn-block" data-toggle="collapse"
         data-target="#collapseCaptain"
@@ -250,15 +288,14 @@
 </div>
     
 </div>
+    </main>
 
-</main>
-
-<!--collapse button for permanent books--> 
+    <!--collapse button for permanent books-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-       <!--jquery-->
+    <!--jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/public/assets/js..."></script>
-</body>
+    <script src="/public/assets/js/script.js"></script>
+  </body>
 </html>
